@@ -11,11 +11,13 @@ public class Main {
         circle.setX(input.nextDouble());
         circle.setY(input.nextDouble());
 
-        while (circle.getRadius() <= 0) {
+        boolean success = false;
+        while (!success) {
             System.out.println("Enter a positive number for radius of circle: ");
             try {
                 circle.setRadius(input.nextDouble());
-            }catch (IOException e) {
+                success = true;
+            } catch (RadiusInputException e) {
                 System.out.println(e);
             }
         }
@@ -34,6 +36,7 @@ public class Main {
         if (circle.contains(x, y)) {
             System.out.println("Yes!");
         } else System.out.println("No!");
+
 
     }
 }

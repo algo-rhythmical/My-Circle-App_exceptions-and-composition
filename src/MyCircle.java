@@ -6,15 +6,15 @@ public class MyCircle {
     /* Constructor(s) */
     MyCircle () {
         this.center = new MyPoint();
-        this.radius = 0;
+        this.radius = 1;
     }
 
     /* Method(s) */
     // Getters and Setters
-    public void setRadius(double radius) throws IOException{
+    public void setRadius(double radius) throws RadiusInputException{
         if (radius > 0) {
             this.radius = radius;
-        }else throw new IOException("Radius cannot be less than or equal to zero!");
+        }else throw new RadiusInputException("Radius cannot be less than or equal to zero!");
     }
     public double getRadius() {
         return radius;
